@@ -3,11 +3,14 @@ import './App.css'
 // import { Home } from './components/Home'
 // import { Forms } from './components/Forms'
 import { Header } from './components/Header'
-import { useState} from "react";
+import { useState, createContext} from "react";
 // import { HomePage } from './components/HomePage';
 
 import { HomePage } from './components/HomePage'
 // import { faMoon } from '@fortawesome/free-solid-svg-icons';
+
+export const MyContext = createContext();
+
 function App() {
   const[value, setValue] = useState(true);
 
@@ -20,22 +23,18 @@ function App() {
   const toggleMode = () => {
     setDarkMode(prevMode => !prevMode);
   };
-  // const toggleIcons = () => {
-  //   if(darkMode){
-  //     icon = "faMoon"
-  //   }
-  // }
+
+  const details = {
+    toggle:menuClick,
+    value:value,
+    darkMode:darkMode,
+    darkModeToggle:toggleMode
+  }
   return (
-    <div>
-    {/* <HomePage /> */}
-    <Header toggle={menuClick} value={value} darkMode={darkMode} darkModeToggle={toggleMode} />
-    <HomePage value={value} darkMode={darkMode} darkModeToggle={toggleMode}/>
-    {/* HI */}
-    {/* <Forms /> */}
-    {/* <Home /> */}
-    {/* <Chart /> */}
-    </div>
-    
+    <MyContext.Provider value={details}>
+    <Header />
+    <HomePage />
+    </MyContext.Provider>
   )
 }
 

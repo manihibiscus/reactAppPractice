@@ -3,16 +3,19 @@ import {faBars, faMagnifyingGlass, faUser, faAngleDown, faExpand, faEnvelope, fa
     faPowerOff, faXmark, faHouse, faFrog, faCalendarPlus, faCirclePlus,
     faListUl, faChartColumn, faTableList, faSun
   } from '@fortawesome/free-solid-svg-icons';
-  
+  import {useContext } from "react";
+  import { MyContext } from '../App';
   import PropTypes from 'prop-types'; 
 
-export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
+export const Header = () => {
+  const user = useContext(MyContext);
+
   return (
     <div className='h-full'>
     {/* <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}> */}
-    <nav className={`flex justify-between w-full ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+    <nav className={`flex justify-between w-full ${user.darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
         <div className='m-2 flex items-center'>
-            <FontAwesomeIcon onClick={(e) => toggle(e)} className='w-[26px] h-[26px]' icon={faBars} />
+            <FontAwesomeIcon onClick={(e) => user.toggle(e)} className='w-[26px] h-[26px]' icon={faBars} />
             <div className='items-center ml-6 hidden md:flex'>
               <p className='text-md font-bold text-purple-500'>PURPLE FROG</p>
               <FontAwesomeIcon className='text-purple-700 w-[30px] h-[30px] hidden md:flex' icon={faFrog} />
@@ -25,7 +28,7 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
        {/* Right SIde Nav */}
         <div className='flex items-center'>
       <p className='p-2 hidden sm:flex'>
-      <button className= {`p-1 ${darkMode ? 'bg-white' : 'bg-gray-500'} text-white rounded`} onClick={darkModeToggle}><FontAwesomeIcon className={`${darkMode ? 'text-black' : 'text-white '}`} icon={faSun} /></button>
+      <button className= {`p-1 ${user.darkMode ? 'bg-white' : 'bg-gray-500'} text-white rounded`} onClick={user.darkModeToggle}><FontAwesomeIcon className={`${user.darkMode ? 'text-black' : 'text-white '}`} icon={faSun} /></button>
       {/* <h1 className="text-2xl font-bold">{darkMode ? "Dark Mode" : "Light Mode"}</h1>
       <p className="mt-2">This is some text.</p> */}
       </p>
@@ -52,9 +55,9 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
           </div>
       </nav>
       {/* MENU */}
-      <div className={`absolute shadow-y-lg min-w-[140px] min-h-full sm:min-w-[300px] sm:min-h-full ${value ? 'translate-x-[-84%]' : 'translate-x-[0%]'} ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} `}>
-      <p className={`p-2 pl-72 sm:pl-64 pt-3 ${value ? 'hidden' : 'translate-x-[0%]'}`}>
-        <FontAwesomeIcon onClick={(e) => toggle(e)} className='absolute w-[32px] h-[32px] sm:w-[22px] sm:h-[22px] cursor-pointer' icon={faXmark} />
+      <div className={`absolute shadow-y-lg min-w-[140px] min-h-full sm:min-w-[300px] sm:min-h-full ${user.value ? 'translate-x-[-84%]' : 'translate-x-[0%]'} ${user.darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} `}>
+      <p className={`p-2 pl-72 sm:pl-64 pt-3 ${user.value ? 'hidden' : 'translate-x-[0%]'}`}>
+        <FontAwesomeIcon onClick={(e) => user.toggle(e)} className='absolute w-[32px] h-[32px] sm:w-[22px] sm:h-[22px] cursor-pointer' icon={faXmark} />
       </p>
       <div>
       <p className='flex items-start'>
@@ -91,7 +94,7 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
       <div className='group flex justify-between ml-2 p-2'>
                 <p className='text-md font-semibold text-gray-500 group-hover:text-purple-500 cursor-pointer'>Projects</p>
       </div>
-      <div className={`justify-center bg-gradient-to-r from-purple-300 to-purple-500 text-white mw-auto rounded-md w-300px mx-10 ${value ? 'hidden' : 'felx'}`}>
+      <div className={`justify-center bg-gradient-to-r from-purple-300 to-purple-500 text-white mw-auto rounded-md w-300px mx-10 ${user.value ? 'hidden' : 'felx'}`}>
                 <button className='p-4 pl-10 text-md font-bold'>+ Add a project</button>
       </div>
       <div className='text-left'>
