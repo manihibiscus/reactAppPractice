@@ -63,53 +63,53 @@ export const Header = () => {
       <p className='flex items-start'>
         <FontAwesomeIcon className='w-[26px] h-[26px] rounded-full border-2 border-pink-500 p-2 m-2' icon={faUser} />
         <p className='mt-2 text-md font-bold'>Manikandan Sidhuraj
-        <span className='text-sm font-semibold text-gray-500 block'>Project Manager</span>
+        <span className={`text-sm font-semibold ${user.darkMode ? 'text-white' : 'text-gray-500'} block`}>Project Manager</span>
         </p> 
       </p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2 mt-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Dashboard</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faHouse} /></p>
+          <p className={`text-md font-medium group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}> Dashboard</p>
+          <p><FontAwesomeIcon className={`w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faHouse} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Basic UI Elements</p>
-          <FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCirclePlus} />
+          <p className={`text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}> Basic UI Elements</p>
+          <FontAwesomeIcon className={`w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faCirclePlus} />
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Icons</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCalendarPlus} /></p>
+          <p className={`text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}> Icons</p>
+          <p><FontAwesomeIcon className={`w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faCalendarPlus} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Forms</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faListUl} /></p>
+          <p className={`text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}> Forms</p>
+          <p><FontAwesomeIcon className={`w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faListUl} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Charts</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faChartColumn} /></p>
+          <p className={`text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}> Charts</p>
+          <p><FontAwesomeIcon className={`w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faChartColumn} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
-          <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Tables</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faTableList} /></p>
+          <p className={ `text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer ${user.darkMode ? 'text-white' : 'text-gray-500'} `}> Tables</p>
+          <p><FontAwesomeIcon className={ `w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4 ${user.darkMode ? 'text-white' : 'text-gray-400'}`} icon={faTableList} /></p>
       </div>
       <div className='group flex justify-between ml-2 p-2'>
-                <p className='text-md font-semibold text-gray-500 group-hover:text-purple-500 cursor-pointer'>Projects</p>
+                <p className={`text-md font-semibold text-gray-500 group-hover:text-purple-500 cursor-pointer ${user.darkMode ? 'text-white' : 'text-gray-500'}`}>Projects</p>
       </div>
       <div className={`justify-center bg-gradient-to-r from-purple-300 to-purple-500 text-white mw-auto rounded-md w-300px mx-10 ${user.value ? 'hidden' : 'felx'}`}>
                 <button className='p-4 pl-10 text-md font-bold'>+ Add a project</button>
       </div>
       <div className='text-left'>
-            <p className='pl-4 pt-6 font-medium text-gray-500'>Catagories</p>
+            <p className={`pl-4 pt-6 font-medium text-gray-500 ${user.darkMode ? 'text-white' : 'text-gray-500'}`}>Catagories</p>
             <div className='group pl-6 pt-6 flex'>
                 <p>
                     <ion-icon className='w-[20px] h-[20px] text-pink-500' name='ellipse-outline'></ion-icon>
                 </p>                        
-                    <p className='font-medium pl-2 text-gray-500 group-hover:text-purple-500'>Free</p>
+                    <p className={`font-medium pl-2 text-gray-500 group-hover:text-purple-500 ${user.darkMode ? 'text-white' : 'text-gray-500'}`}>Free</p>
             </div>
             <div className='group pl-6 pt-4 flex'>
                 <p>
                     <ion-icon className='w-[20px] h-[20px] text-blue-600' name='ellipse-outline'></ion-icon>
                 </p>                        
-                    <p className='font-medium pl-2 text-gray-500 group-hover:text-purple-500'>Pro</p>
+                    <p className={`font-medium pl-2 text-gray-500 group-hover:text-purple-500 ${user.darkMode ? 'text-white' : 'text-gray-500'}`}>Pro</p>
             </div>
         </div>
       </div>
