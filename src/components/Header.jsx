@@ -1,20 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars, faMagnifyingGlass, faUser, faAngleDown, faExpand, faEnvelope, faBell, 
     faPowerOff, faXmark, faHouse, faFrog, faCalendarPlus, faCirclePlus,
-    faListUl, faChartColumn, faTableList
+    faListUl, faChartColumn, faTableList, faSun
   } from '@fortawesome/free-solid-svg-icons';
-//   import PropTypes from 'prop-types'; // Import PropTypes
+  
+  import PropTypes from 'prop-types'; 
 
-  import { useState} from "react";
-// import { HomePage } from './HomePage';
-
-export const Header = () => {
-    const[value, setValue] = useState(true);
+export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
   return (
     <>
-    <nav className='flex bg-white justify-between w-full'>
+    {/* <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}> */}
+    <nav className={`flex justify-between w-full ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
         <div className='m-2 flex items-center'>
-            <FontAwesomeIcon onClick={()=>{setValue(!value)}} className='w-[26px] h-[26px]' icon={faBars} />
+            <FontAwesomeIcon onClick={(e) => toggle(e)} className='w-[26px] h-[26px]' icon={faBars} />
             <div className='items-center ml-6 hidden md:flex'>
               <p className='text-md font-bold text-purple-500'>PURPLE FROG</p>
               <FontAwesomeIcon className='text-purple-700 w-[30px] h-[30px] hidden md:flex' icon={faFrog} />
@@ -25,7 +23,12 @@ export const Header = () => {
         </div>
         </div>
        {/* Right SIde Nav */}
-        <div className='flex'>
+        <div className='flex items-center'>
+      <p className='p-2'>
+      <button className= {`p-2 ${darkMode ? 'bg-white' : 'bg-black'} hidden md:flex text-white rounded`} onClick={darkModeToggle}><FontAwesomeIcon className={`${darkMode ? 'text-black' : 'text-white '}`} icon={faSun} /></button>
+      {/* <h1 className="text-2xl font-bold">{darkMode ? "Dark Mode" : "Light Mode"}</h1>
+      <p className="mt-2">This is some text.</p> */}
+      </p>
           <ul className='flex items-center'>
             <li>
             <FontAwesomeIcon className='w-[26px] h-[26px] border-2 border-red-400 rounded-full p-1' icon={faUser} />
@@ -33,7 +36,7 @@ export const Header = () => {
             <li className='pl-2'>Albus</li>
             <li className='pl-2'><FontAwesomeIcon icon={faAngleDown} /></li>
           </ul>
-          <ul className='items-center ml-10 mr-2 hidden lg:flex' >
+          <ul className='items-center ml-10 hidden lg:flex' >
           <li><FontAwesomeIcon className='w-[20px] h-[20px]' icon={faExpand} /></li>
           <li className='relative pl-10'>
           <FontAwesomeIcon className='w-[20px] h-[20px]' icon={faEnvelope} />
@@ -49,9 +52,9 @@ export const Header = () => {
           </div>
       </nav>
       {/* MENU */}
-      <div className={`absolute shadow-y-lg min-w-[140px] bg-white min-h-full sm:min-w-[300px] sm:min-h-full ${value ? 'translate-x-[-84%]' : 'translate-x-[0%]'} `}>
+      <div className={`absolute shadow-y-lg min-w-[140px] min-h-full sm:min-w-[300px] sm:min-h-full ${value ? 'translate-x-[-84%]' : 'translate-x-[0%]'} ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} `}>
       <p className={`p-2 pl-52 sm:pl-64 pt-3 ${value ? 'hidden' : 'translate-x-[0%]'}`}>
-        <FontAwesomeIcon onClick={()=>{setValue(!value)}} className='absolute w-[22px] h-[22px] cursor-pointer' icon={faXmark} />
+        <FontAwesomeIcon onClick={(e) => toggle(e)} className='absolute w-[22px] h-[22px] cursor-pointer' icon={faXmark} />
       </p>
       <div>
       <p className='flex items-start'>
@@ -63,7 +66,6 @@ export const Header = () => {
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2 mt-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Dashboard</p>
-          {/* <p><FontAwesomeIcon className='absolute w-[15px] h-[15px] text-white group-hover:text-purple-500 pl-[100px] pt-2' icon={faChevronLeft} /></p> */}
           <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faHouse} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
@@ -86,15 +88,36 @@ export const Header = () => {
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Tables</p>
           <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faTableList} /></p>
       </div>
-      {/* <div class="flex justify-center bg-gradient-to-r from-purple-300 to-purple-500 text-white mw-auto rounded-sm w-500px mx-10" id="addpro">
-                <button class="p-4 text-md font-bold">+ Add a project</button>
-      </div> */}
-        {/* <HomePage value={value} setValue={setValue} /> */}
+      <div className='group flex justify-between ml-2 p-2'>
+                <p className='text-md font-semibold text-gray-500 group-hover:text-purple-500 cursor-pointer'>Projects</p>
       </div>
+      <div className={`justify-center bg-gradient-to-r from-purple-300 to-purple-500 text-white mw-auto rounded-md w-300px mx-10 ${value ? 'hidden' : 'felx'}`}>
+                <button className='p-4 pl-10 text-md font-bold'>+ Add a project</button>
+      </div>
+      <div className='text-left'>
+            <p className='pl-4 pt-6 font-medium text-gray-500'>Catagories</p>
+            <div className='group pl-6 pt-6 flex'>
+                <p>
+                    <ion-icon className='w-[20px] h-[20px] text-pink-500' name='ellipse-outline'></ion-icon>
+                </p>                        
+                    <p className='font-medium pl-2 text-gray-500 group-hover:text-purple-500'>Free</p>
+            </div>
+            <div className='group pl-6 pt-4 flex'>
+                <p>
+                    <ion-icon className='w-[20px] h-[20px] text-blue-600' name='ellipse-outline'></ion-icon>
+                </p>                        
+                    <p className='font-medium pl-2 text-gray-500 group-hover:text-purple-500'>Pro</p>
+            </div>
+        </div>
+      </div>
+      {/* </div> */}
     </>
   )
 }
-// Header.propTypes = {
-//     value: PropTypes.string.isRequired, // Validate 'value' prop
-//     setValue: PropTypes.func.isRequired, // Validate 'setValue' prop
-//   };
+Header.propTypes = {
+    value: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    darkModeToggle: PropTypes.func.isRequired
+
+  };
