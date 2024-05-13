@@ -8,7 +8,7 @@ import {faBars, faMagnifyingGlass, faUser, faAngleDown, faExpand, faEnvelope, fa
 
 export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
   return (
-    <>
+    <div className='h-full'>
     {/* <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}> */}
     <nav className={`flex justify-between w-full ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
         <div className='m-2 flex items-center'>
@@ -24,8 +24,8 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
         </div>
        {/* Right SIde Nav */}
         <div className='flex items-center'>
-      <p className='p-2'>
-      <button className= {`p-2 ${darkMode ? 'bg-white' : 'bg-black'} hidden md:flex text-white rounded`} onClick={darkModeToggle}><FontAwesomeIcon className={`${darkMode ? 'text-black' : 'text-white '}`} icon={faSun} /></button>
+      <p className='p-2 hidden sm:flex'>
+      <button className= {`p-1 ${darkMode ? 'bg-white' : 'bg-gray-500'} text-white rounded`} onClick={darkModeToggle}><FontAwesomeIcon className={`${darkMode ? 'text-black' : 'text-white '}`} icon={faSun} /></button>
       {/* <h1 className="text-2xl font-bold">{darkMode ? "Dark Mode" : "Light Mode"}</h1>
       <p className="mt-2">This is some text.</p> */}
       </p>
@@ -33,7 +33,7 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
             <li>
             <FontAwesomeIcon className='w-[26px] h-[26px] border-2 border-red-400 rounded-full p-1' icon={faUser} />
             </li>
-            <li className='pl-2'>Albus</li>
+            <li className='pl-2'>Mani</li>
             <li className='pl-2'><FontAwesomeIcon icon={faAngleDown} /></li>
           </ul>
           <ul className='items-center ml-10 hidden lg:flex' >
@@ -59,8 +59,8 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
       <div>
       <p className='flex items-start'>
         <FontAwesomeIcon className='w-[26px] h-[26px] rounded-full border-2 border-pink-500 p-2 m-2' icon={faUser} />
-        <p className='mt-2 text-md font-bold'>David Gray M
-        <span className='text-sm font-light text-gray-500 block'>Project Manager</span>
+        <p className='mt-2 text-md font-bold'>Manikandan Sidhuraj
+        <span className='text-sm font-semibold text-gray-500 block'>Project Manager</span>
         </p> 
       </p>
       </div>
@@ -111,7 +111,7 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
         </div>
       </div>
       {/* </div> */}
-    </>
+    </div>
   )
 }
 Header.propTypes = {
