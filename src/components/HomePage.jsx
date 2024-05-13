@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGaugeSimple, faCapsules, faClipboard, faEye, faCircleRadiation} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types'; 
-import { Chart } from './Chart';
 import { PieChar } from './PieChar';
+// import {Chart} from 'react-apexcharts';
+import {Chart} from '../components/Chart'
 
 const data=[
     {
@@ -36,12 +37,12 @@ export const HomePage = ({value, darkMode}) => {
       <div className='ml-6'>
       <div className={`flex justify-between visible ${value ? 'visible':'invisible sm:visible'}`}>
         <div className={`flex items-center ${value ? 'ml-12' : 'ml-72'}`}>
-            <p><FontAwesomeIcon icon={faGaugeSimple} /></p>
+            <p><FontAwesomeIcon className='text-gray-600' icon={faGaugeSimple} /></p>
             <p className='p-1'> Dashboard</p>
         </div>
         <div className='hidden sm:flex items-center'>
         <p className='p-1'>Overview </p>  
-        <FontAwesomeIcon className='pr-2' icon={faCircleRadiation} />
+        <FontAwesomeIcon className='pr-2 text-gray-600' icon={faCircleRadiation} />
         </div>
     </div>
     <div className={`mt-4 lg:h-[180px] grid grid-rows-3 md:grid-rows-3 lg:grid-cols-3 gap-4 pl-6 ${value ? 'ml-4 visible' : 'ml-64 invisible sm:visible'} mr-2`}>

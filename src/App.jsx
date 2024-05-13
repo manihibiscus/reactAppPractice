@@ -7,20 +7,24 @@ import { useState} from "react";
 // import { HomePage } from './components/HomePage';
 
 import { HomePage } from './components/HomePage'
+// import { faMoon } from '@fortawesome/free-solid-svg-icons';
 function App() {
   const[value, setValue] = useState(true);
 
   const menuClick = (event) => {
-    event.preventDefault(); // This prevents the default behavior of the event
+    event.preventDefault();
     setValue(!value);
   }
-  // State to track the current theme
   const [darkMode, setDarkMode] = useState(false);
 
-  // Function to toggle between dark and light mode
   const toggleMode = () => {
     setDarkMode(prevMode => !prevMode);
   };
+  // const toggleIcons = () => {
+  //   if(darkMode){
+  //     icon = "faMoon"
+  //   }
+  // }
   return (
     <div>
     {/* <HomePage /> */}

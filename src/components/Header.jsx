@@ -53,8 +53,8 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
       </nav>
       {/* MENU */}
       <div className={`absolute shadow-y-lg min-w-[140px] min-h-full sm:min-w-[300px] sm:min-h-full ${value ? 'translate-x-[-84%]' : 'translate-x-[0%]'} ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} `}>
-      <p className={`p-2 pl-52 sm:pl-64 pt-3 ${value ? 'hidden' : 'translate-x-[0%]'}`}>
-        <FontAwesomeIcon onClick={(e) => toggle(e)} className='absolute w-[22px] h-[22px] cursor-pointer' icon={faXmark} />
+      <p className={`p-2 pl-72 sm:pl-64 pt-3 ${value ? 'hidden' : 'translate-x-[0%]'}`}>
+        <FontAwesomeIcon onClick={(e) => toggle(e)} className='absolute w-[32px] h-[32px] sm:w-[22px] sm:h-[22px] cursor-pointer' icon={faXmark} />
       </p>
       <div>
       <p className='flex items-start'>
@@ -66,27 +66,27 @@ export const Header = ({toggle, value, darkMode, darkModeToggle}) => {
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2 mt-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Dashboard</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faHouse} /></p>
+          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faHouse} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Basic UI Elements</p>
-          <FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCirclePlus} />
+          <FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCirclePlus} />
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Icons</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCalendarPlus} /></p>
+          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faCalendarPlus} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Forms</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faListUl} /></p>
+          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faListUl} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Charts</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faChartColumn} /></p>
+          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faChartColumn} /></p>
       </div>
       <div className='group flex justify-between ml-2 pt-4 pl-2'>
           <p className='text-md font-medium text-gray-500 group-hover:text-purple-500 cursor-pointeNamer'> Tables</p>
-          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-400 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faTableList} /></p>
+          <p><FontAwesomeIcon className='w-[20px] h-[20px] text-gray-600 group-hover:text-purple-500 pl-[80px] pr-3 ml-8 sm:ml-0 sm:pr-4' icon={faTableList} /></p>
       </div>
       <div className='group flex justify-between ml-2 p-2'>
                 <p className='text-md font-semibold text-gray-500 group-hover:text-purple-500 cursor-pointer'>Projects</p>
