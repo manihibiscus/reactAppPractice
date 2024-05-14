@@ -6,7 +6,7 @@ import {faBars, faMagnifyingGlass, faUser, faAngleDown, faExpand, faEnvelope, fa
   import {useContext } from "react";
   import { MyContext } from '../App';
   import PropTypes from 'prop-types'; 
-
+import {Link} from "react-router-dom"
 export const Header = () => {
   const user = useContext(MyContext);
 
@@ -16,10 +16,10 @@ export const Header = () => {
     <nav className={`flex justify-between w-full ${user.darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
         <div className='m-2 flex items-center'>
             <FontAwesomeIcon onClick={(e) => user.toggle(e)} className='w-[26px] h-[26px]' icon={faBars} />
-            <div className='items-center ml-6 hidden md:flex'>
+            <Link to={"/"}><div className='items-center ml-6 hidden md:flex cursor-pointer'>
               <p className='text-md font-bold text-purple-500'>PURPLE FROG</p>
               <FontAwesomeIcon className='text-purple-700 w-[30px] h-[30px] hidden md:flex' icon={faFrog} />
-            </div>
+            </div></Link>
         <div className='relative flex items-center ml-6 sm:w-96'>
             <input type='text' placeholder='Search' className='placeholder:text-left placeholder:pl-10 sm:w-full p-1 rounded-md' />
             <FontAwesomeIcon className='absolute pl-4' icon={faMagnifyingGlass} />       
@@ -40,9 +40,9 @@ export const Header = () => {
             <li className='pl-2'><FontAwesomeIcon icon={faAngleDown} /></li>
           </ul>
           <ul className='items-center ml-10 hidden lg:flex' >
-          <li><FontAwesomeIcon className='w-[20px] h-[20px]' icon={faExpand} /></li>
+          <li><FontAwesomeIcon className='w-[20px] h-[20px] cursor-pointer' icon={faExpand} /></li>
           <li className='relative pl-10'>
-          <FontAwesomeIcon className='w-[20px] h-[20px]' icon={faEnvelope} />
+          <Link to={"/mail"}><FontAwesomeIcon className='w-[20px] h-[20px]' icon={faEnvelope} /></Link>
           <div className='absolute top-[-4px] right-0 w-2 h-2 bg-red-400 rounded-full'></div>
           </li>
           <li className='relative pl-10'>

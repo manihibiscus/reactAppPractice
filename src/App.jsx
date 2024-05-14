@@ -8,7 +8,8 @@ import { useState, createContext} from "react";
 
 import { HomePage } from './components/HomePage'
 // import { faMoon } from '@fortawesome/free-solid-svg-icons';
-
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { ShowMail } from './components/ShowMail';
 export const MyContext = createContext();
 
 function App() {
@@ -31,10 +32,18 @@ function App() {
     darkModeToggle:toggleMode
   }
   return (
+    <>
+    <BrowserRouter>
     <MyContext.Provider value={details}>
     <Header />
-    <HomePage />
+    <Routes>
+      <Route path="/" element={ <HomePage />} />
+      <Route path="/mail" element={ <ShowMail />} />
+    </Routes>
+   
     </MyContext.Provider>
+    </BrowserRouter>
+    </>
   )
 }
 
