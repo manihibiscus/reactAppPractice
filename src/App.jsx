@@ -10,11 +10,12 @@ import { HomePage } from './components/HomePage'
 // import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { ShowMail } from './components/ShowMail';
+import { ProfileCart } from './components/ProfileCart';
 export const MyContext = createContext();
 
 function App() {
   const[value, setValue] = useState(true);
-
+  const[profileArrow, setProfileArrow] =useState(false);
   const menuClick = (event) => {
     event.preventDefault();
     setValue(!value);
@@ -25,17 +26,24 @@ function App() {
     setDarkMode(prevMode => !prevMode);
   };
 
+  const profile=()=>{
+    setProfileArrow(!profileArrow)
+  }
+
   const details = {
     toggle:menuClick,
     value:value,
     darkMode:darkMode,
-    darkModeToggle:toggleMode
+    darkModeToggle:toggleMode,
+    profileArrow:profileArrow,
+    profile:profile
   }
   return (
     <>
     <BrowserRouter>
     <MyContext.Provider value={details}>
     <Header />
+    <ProfileCart />
     <Routes>
       <Route path="/" element={ <HomePage />} />
       <Route path="/mail" element={ <ShowMail />} />

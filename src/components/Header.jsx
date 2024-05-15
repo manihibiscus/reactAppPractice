@@ -37,7 +37,7 @@ export const Header = () => {
             <FontAwesomeIcon className='w-[26px] h-[26px] border-2 border-red-400 rounded-full p-1' icon={faUser} />
             </li>
             <li className='pl-2'>Mani</li>
-            <li className='pl-2'><FontAwesomeIcon icon={faAngleDown} /></li>
+            <li className='pl-2'><FontAwesomeIcon onClick={user.profile} className='cursor-pointer' icon={faAngleDown} /></li>
           </ul>
           <ul className='items-center ml-10 hidden lg:flex' >
           <li><FontAwesomeIcon className='w-[20px] h-[20px] cursor-pointer' icon={faExpand} /></li>
